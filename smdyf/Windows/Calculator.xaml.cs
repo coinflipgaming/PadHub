@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Data;
 
 namespace smdyf.Windows
 {
@@ -19,6 +11,10 @@ namespace smdyf.Windows
     /// </summary>
     public partial class Calculator : Window
     {
+        String num1 = "";
+        String num2 = "";
+        String current_symbol = "";
+        bool newcalc = false;
         public Calculator()
         {
             InitializeComponent();
@@ -29,6 +25,81 @@ namespace smdyf.Windows
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+        private void Button_Pressed(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Button clicked_button = (Button)sender;
+                String? inpt = clicked_button.Content.ToString();
+                
+                switch (inpt)
+                {
+
+                    case "-":
+                        change_symbol(inpt);
+                        break;
+                    case "+":
+                        change_symbol(inpt);
+                        break;
+                    case "*":
+                        change_symbol(inpt);
+                        break;
+                    case "/":
+                        change_symbol(inpt);
+                        break;
+                    case "%":
+                        change_symbol(inpt);
+                        break;
+                    case "+/-":
+                        change_symbol(inpt);
+                        break;
+                    case "√":
+                        change_symbol(inpt);
+                        break;
+                    case "=":
+                        if(current_symbol == ""){break;}
+                        if(num1 == ""){break;}
+                        num2 = textbox.Text.ToString();
+                        if(num2 == ""){break;}
+
+                        string math = num1+current_symbol+num2;
+                        string value = new DataTable().Compute(math, null).ToString();
+
+                        textbox.Text = value;
+                        num1 = value;
+                        num2 = "";
+                        newcalc = true;
+                        break;
+                    default:
+                        if (newcalc) { newcalc = false; textbox.Text = ""; }
+                        if(textbox.Text == "0")
+                        {
+                            textbox.Text = inpt;
+                            break;
+                        }
+                        textbox.Text += inpt;
+                        break;
+                }
+                void change_symbol(String symbol)
+                {
+                    if (textbox.Text.ToString() == "")
+                    {
+                        return;
+                    }
+                    if (num1 == "")
+                    {
+                        num1 = textbox.Text.ToString();
+                        textbox.Text = "";
+                    }
+                    current_symbol = symbol;
+                }
+            }
+            catch
+            {
+                MessageBox.Show(e.ToString());
+            }
+            
         }
     }
 }

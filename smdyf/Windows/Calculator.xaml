@@ -4,8 +4,56 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Calculator" Height="450" Width="800">
+        Title="Calculator" Height="450" Width="400">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Button Click="Button_Powrot">Powrót</Button>
+        <TextBox Grid.Row="1" Grid.ColumnSpan="5" IsEnabled="False" Text="0" x:Name="textbox" FontSize="40px" TextAlignment="Right"/>
+        <Button Grid.Row="2" Grid.Column="0" Content="MC" Click="Button_Pressed"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="MR" Click="Button_Pressed"/>
+        <Button Grid.Row="2" Grid.Column="2" Content="M-" Click="Button_Pressed"/>
+        <Button Grid.Row="2" Grid.Column="3" Content="M+" Click="Button_Pressed"/>
+        <Button Grid.Row="2" Grid.Column="4" Content="OFF" Click="Button_Pressed"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="→" Click="Button_Pressed"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="MU" Click="Button_Pressed"/>
+        <Button Grid.Row="3" Grid.Column="2" Content="GT" Click="Button_Pressed"/>
+        <Button Grid.Row="3" Grid.Column="3" Content="%" Click="Button_Pressed"/>
+        <Button Grid.Row="3" Grid.Column="4" Content="/" Click="Button_Pressed"/>
+        <Button Grid.Row="4" Grid.Column="0" Content="√" Click="Button_Pressed"/>
+        <Button Grid.Row="4" Grid.Column="1" Content="7" Click="Button_Pressed"/>
+        <Button Grid.Row="4" Grid.Column="2" Content="8" Click="Button_Pressed"/>
+        <Button Grid.Row="4" Grid.Column="3" Content="9" Click="Button_Pressed"/>
+        <Button Grid.Row="4" Grid.Column="4" Content="*" Click="Button_Pressed"/>
+        <Button Grid.Row="5" Grid.Column="0" Content="+/-" Click="Button_Pressed"/>
+        <Button Grid.Row="5" Grid.Column="1" Content="4" Click="Button_Pressed"/>
+        <Button Grid.Row="5" Grid.Column="2" Content="5" Click="Button_Pressed"/>
+        <Button Grid.Row="5" Grid.Column="3" Content="6" Click="Button_Pressed"/>
+        <Button Grid.Row="5" Grid.Column="4" Content="-" Click="Button_Pressed"/>
+        <Button Grid.Row="6" Grid.Column="0" Content="AC" Click="Button_Pressed"/>
+        <Button Grid.Row="6" Grid.Column="1" Content="1" Click="Button_Pressed"/>
+        <Button Grid.Row="6" Grid.Column="2" Content="2" Click="Button_Pressed"/>
+        <Button Grid.Row="6" Grid.Column="3" Content="3" Click="Button_Pressed"/>
+        <Button Grid.Row="6" Grid.Column="4" Content="+" Click="Button_Pressed"/>
+        <Button Grid.Row="7" Grid.Column="0" Content="ON" Click="Button_Pressed"/>
+        <Button Grid.Row="7" Grid.Column="1" Content="0" Click="Button_Pressed"/>
+        <Button Grid.Row="7" Grid.Column="2" Content="00" Click="Button_Pressed"/>
+        <Button Grid.Row="7" Grid.Column="3" Content="." Click="Button_Pressed"/>
+        <Button Grid.Row="7" Grid.Column="4" Content="=" Click="Button_Pressed"/>
     </Grid>
 </Window>
