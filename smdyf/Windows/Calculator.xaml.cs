@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using System.Data;
+using System.Linq;
 
 namespace smdyf.Windows
 {
@@ -52,10 +53,12 @@ namespace smdyf.Windows
                         change_symbol(inpt);
                         break;
                     case "+/-":
-                        change_symbol(inpt);
+                        if (textbox.Text.StartsWith("-")) { textbox.Text = textbox.Text.Substring(1); break; }
+                        textbox.Text = "-" + textbox.Text;
                         break;
                     case "√":
-                        change_symbol(inpt);
+                        if (textbox.Text.StartsWith("-")) { break; }
+                        textbox.Text = Math.Sqrt(float.Parse(textbox.Text)).ToString();
                         break;
                     case "=":
                         if(current_symbol == ""){break;}
