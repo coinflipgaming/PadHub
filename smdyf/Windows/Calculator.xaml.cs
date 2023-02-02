@@ -15,7 +15,7 @@ namespace smdyf.Windows
         String num1 = "";
         String num2 = "";
         String current_symbol = "";
-        bool newcalc = false;
+        bool newcalc = true;
         public Calculator()
         {
             InitializeComponent();
@@ -72,6 +72,13 @@ namespace smdyf.Windows
                         textbox.Text = value;
                         num1 = value;
                         num2 = "";
+                        newcalc = true;
+                        break;
+                    case "AC":
+                        textbox.Text = "0";
+                        num1 = "0";
+                        num2 = "0";
+                        current_symbol = "";
                         newcalc = true;
                         break;
                     default:
