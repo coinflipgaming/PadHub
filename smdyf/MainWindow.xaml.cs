@@ -34,5 +34,11 @@ namespace smdyf
             memoCards.Show();
             this.Close();
         }
+        private void Button_Click_Waluty(object sender, RoutedEventArgs e)
+        {
+            Waluty window = new Waluty();
+            window.Show();
+            this.Close();
+        }
     }
 }

@@ -1,0 +1,32 @@
+﻿<Window x:Class="smdyf.Waluty"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Waluty" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ComboBox Name="box1" Grid.Column="1" Grid.Row="1" FontSize="50px"/>
+        <ComboBox Name="box2" Grid.Column="5" Grid.Row="1" FontSize="50px"/>
+        <Label Grid.Column="3" Grid.Row="3" FontSize="50px" HorizontalAlignment="Center" VerticalAlignment="Center">=</Label>
+        <TextBox Name="inpt1" Grid.Column="1" Grid.Row="3" FontSize="50px"/>
+        <TextBox Name="inpt2" Grid.Column="5" Grid.Row="3" FontSize="50px"/>
+    </Grid>
+</Window>

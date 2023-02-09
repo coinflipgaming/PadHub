@@ -17,11 +17,14 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button  Grid.Column="1" Grid.Row="1" Click="Button_Click_Calculator">Kalkulator</Button>
         <Button  Grid.Column="3" Grid.Row="1" Click="Button_Click_TicTacToe">Kółko i krzyżyk</Button>
         <Button  Grid.Column="5" Grid.Row="1" Click="Button_Click_MemoCards">Memo Cards</Button>
+        <Button  Grid.Column="1" Grid.Row="3" Click="Button_Click_Waluty">Waluty</Button>
     </Grid>
 </Window>
