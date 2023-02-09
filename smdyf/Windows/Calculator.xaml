@@ -25,8 +25,8 @@
         <Button Click="Button_Powrot">Powrót</Button>
         <TextBox Grid.Row="1" Grid.ColumnSpan="5" IsEnabled="False" Text="0" x:Name="textbox" FontSize="45px" TextAlignment="Right"/>
         <Button Grid.Row="2" Grid.Column="0" Content="→" Click="Button_Pressed"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="C" Click="Button_Pressed"/>
-        <Button Grid.Row="2" Grid.Column="2" Content="V" Click="Button_Pressed"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="" Click="Button_Pressed"/>
+        <Button Grid.Row="2" Grid.Column="2" Content="" Click="Button_Pressed"/>
         <Button Grid.Row="2" Grid.Column="3" Content="%" Click="Button_Pressed"/>
         <Button Grid.Row="2" Grid.Column="4" Content="/" Click="Button_Pressed"/>
         <Button Grid.Row="3" Grid.Column="0" Content="√" Click="Button_Pressed"/>
