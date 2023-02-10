@@ -18,35 +18,43 @@ namespace smdyf
 {
     public partial class Waluty : Window
     {
-
-        public List<Waluta> cos;
-        public List<string> nazwy;
-
+        public IList<Waluta> list = new List<Waluta>();
         public Waluty()
         {
             InitializeComponent();
-            cos = new List<Waluta>();
-            cos.Add(new Waluta("USD", 1));
-            cos.Add(new Waluta("PLN", 4.39));
-            cos.Add(new Waluta("CZK", 21.98));
+            list.Add(new Waluta("USD", 1));
+            list.Add(new Waluta("PLN", 4.39));
+            list.Add(new Waluta("CZK", 21.98));
 
-            for(int i = 0; i > cos.Count-1; i++)
+            IList<String> _list = new List<String>();
+
+            for (int i = 0; i < list.Count; i++)
             {
-                nazwy.Add(cos[i].Name);
+                _list.Add(list[i].name);
             }
-        }        
+
+            box1.ItemsSource = new CollectionView(_list);
+            box2.ItemsSource = new CollectionView(_list);
+        }
+        private void inpt1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            inpt2.Text = (float.Parse(inpt1.Text.ToString()) * (1 / list[box1.SelectedIndex].value) * list[box2.SelectedIndex].value).ToString();
+        }
+
+        private void inpt2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            inpt1.Text = (float.Parse(inpt2.Text.ToString()) * (1 / list[box2.SelectedIndex].value) * list[box1.SelectedIndex].value).ToString();
+        }
     }
     public class Waluta
     {
-        string name;
-        double value;
+        public string name { get; set; }
+        public double value { get; set; }
 
         public Waluta(string v1, double v2)
         {
             this.name = v1;
             this.value = v2;
         }
-
-        public string Name { get => name; set => name = value; };
     }
 }
