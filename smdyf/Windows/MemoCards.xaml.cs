@@ -14,12 +14,10 @@ using System.Windows.Shapes;
 
 namespace smdyf.Windows
 {
-    /// <summary>
-    /// Logika interakcji dla klasy MemoCards.xaml
-    /// </summary>
     public partial class MemoCards : Window
     {
         public IList<card> Deck = new List<card>();
+        public int cards_flipped = 0;
         public MemoCards()
         {
             InitializeComponent();
@@ -65,10 +63,26 @@ namespace smdyf.Windows
                     container.Children.Add(_button);
                 }
             }
+            int n = 0;
+            while (2 < Deck.Count())
+            {
+                n += 1;
+                Random rand = new();
+                int a = rand.Next(0, Deck.Count()-1);
+                Deck[a].pair_id = n;
+                Deck[a].button.Content = n.ToString();
+                Deck.RemoveAt(a);
+                int b = rand.Next(0, Deck.Count()-1);
+                Deck[b].pair_id = n;
+                Deck[b].button.Content = n.ToString();
+                Deck.RemoveAt(b);
+
+            }
         }
     }
     public class card
     {
+        public int pair_id { get; set; }
         public int x { get; set; }
         public int y { get; set; }
         public Button button { get; set; }

@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace smdyf.Windows
 {
-    /// <summary>
-    /// Logika interakcji dla klasy MemoCardsDialog.xaml
-    /// </summary>
     public partial class MemoCardsDialog : Window
     {
         public MemoCards a;
