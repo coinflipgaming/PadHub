@@ -19,31 +19,43 @@ namespace smdyf
     public partial class Waluty : Window
     {
         public IList<Waluta> list = new List<Waluta>();
+
+        public string[] currencyNames = {"USD", "PLN", "CZK", "EUR", "GBP", "JPY", "CHF", "CAD", "AUD", "HKD", "BRL", "INR", "MXN" };
+        public double[] currencyValues = {1.00, 4.39, 21.98, 0.88, 0.76, 109.86, 0.89, 1.29, 1.35, 7.75, 5.64, 73.14, 20.77 };
+
         public Waluty()
         {
             InitializeComponent();
-            list.Add(new Waluta("USD", 1));
-            list.Add(new Waluta("PLN", 4.39));
-            list.Add(new Waluta("CZK", 21.98));
-
-            IList<String> _list = new List<String>();
-
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < currencyNames.Length; i++)
             {
-                _list.Add(list[i].name);
+                list.Add(new Waluta(currencyNames[i], currencyValues[i]));
             }
 
-            box1.ItemsSource = new CollectionView(_list);
-            box2.ItemsSource = new CollectionView(_list);
+            IList<String> _list = new List<String>();
+            box1.ItemsSource = new CollectionView(currencyNames);
+            box2.ItemsSource = new CollectionView(currencyNames);
         }
         private void inpt1_TextChanged(object sender, TextChangedEventArgs e)
         {
-            inpt2.Text = (float.Parse(inpt1.Text.ToString()) * (1 / list[box1.SelectedIndex].value) * list[box2.SelectedIndex].value).ToString();
+            if (inpt1.IsFocused)
+            {
+                inpt2.Text = (float.Parse(inpt1.Text.ToString()) * (1 / list[box1.SelectedIndex].value) * list[box2.SelectedIndex].value).ToString();
+            }
+            
         }
-
         private void inpt2_TextChanged(object sender, TextChangedEventArgs e)
         {
-            inpt1.Text = (float.Parse(inpt2.Text.ToString()) * (1 / list[box2.SelectedIndex].value) * list[box1.SelectedIndex].value).ToString();
+            if (inpt2.IsFocused)
+            {
+                inpt1.Text = (float.Parse(inpt2.Text.ToString()) * (1 / list[box2.SelectedIndex].value) * list[box1.SelectedIndex].value).ToString();
+            }
+        }
+
+        private void Button_Powrot(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
     public class Waluta

@@ -16,17 +16,19 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition/>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="0.5*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
-        <ComboBox Name="box1" Grid.Column="1" Grid.Row="1" FontSize="50px"/>
-        <ComboBox Name="box2" Grid.Column="5" Grid.Row="1" FontSize="50px"/>
-        <Label Grid.Column="3" Grid.Row="3" FontSize="50px" HorizontalAlignment="Center" VerticalAlignment="Center">=</Label>
-        <TextBox Name="inpt1" Grid.Column="1" Grid.Row="3" FontSize="50px" TextChanged="inpt1_TextChanged"/>
-        <TextBox Name="inpt2" Grid.Column="5" Grid.Row="3" FontSize="50px" TextChanged="inpt2_TextChanged"/>
+        
+        <Button Click="Button_Powrot">Powrót</Button>
+        <ComboBox Name="box1" Grid.Column="1" Grid.Row="2" FontSize="30px"/>
+        <ComboBox Name="box2" Grid.Column="5" Grid.Row="2" FontSize="30px"/>
+        <Label Grid.Column="3" Grid.Row="4" FontSize="30px" HorizontalAlignment="Center" VerticalAlignment="Center">=</Label>
+        <TextBox Name="inpt1" Grid.Column="1" Grid.Row="4" FontSize="30px" TextChanged="inpt1_TextChanged"/>
+        <TextBox Name="inpt2" Grid.Column="5" Grid.Row="4" FontSize="30px" TextChanged="inpt2_TextChanged"/>
     </Grid>
 </Window>
