@@ -25,5 +25,6 @@
         <Button Click="Button_Powrot">Powrot</Button>
         <Button Grid.Row="4" Grid.Column="1" Name="new_game_button">Nowa Gra</Button>
         <Label Grid.Row="4" Grid.Column="2" Name="points"></Label>
-        </Grid>
+        <ProgressBar Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Minimum="0" Value="0" Name="progressbar"/>
+    </Grid>
 </Window>

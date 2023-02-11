@@ -34,8 +34,11 @@ namespace smdyf.Windows
         public void new_game(int Rows = 0,int Columns = 0)
         {
             if (Rows!=0) { _rows = Rows; }
-            if (Columns != 0) { _columns = Columns; }
+            if (Columns != 0) { _columns = Columns; progressbar.Maximum = Rows * Columns / 2; }
+
+            progressbar.Value = 0;
             moves = 0;
+            pts = 0;
             clicked.Clear();
             Deck.Clear();
             container.Children.Clear();
@@ -83,6 +86,7 @@ namespace smdyf.Windows
                                 Deck.Remove(clicked[1]);
                                 clicked.Clear();
                                 pts += 10;
+                                progressbar.Value += 1;
                             }
                         }
                         else if (clicked.Count() == 3)
